@@ -37,6 +37,7 @@ import FooterLogoMain from "./assets/images/png/footer-logo.png";
 import FooterSocial from "./assets/images/png/facebook.png";
 import FooterSocial2 from "./assets/images/png/instagram2.png";
 import FooterSocial3 from "./assets/images/png/youtube3.png";
+import FooterSocial4 from "./assets/images/png/bluefb.png";
 // Mobile
 
 import MenuHamBurger from "./assets/images/svg/menuBurger.svg";
@@ -219,7 +220,7 @@ function App() {
       <div className="MainSlider">
         <div className="container">
           <div className="sho-icons">
-          <div className="footer-bottom-social2">
+            <div className="footer-bottom-social2">
               <a href="https://www.facebook.com/Imocentral">
                 <img src={FooterSocial} alt="footer" />
               </a>
@@ -283,7 +284,7 @@ function App() {
                       className="collapse navbar-collapse menu2"
                       id="navbarSupportedContent"
                     >
-                      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                      <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-ali">
                         <li className="nav-item">
                           <a
                             className="nav-link active"
@@ -307,6 +308,13 @@ function App() {
                       <button className="HeaderBlueButton">
                         Vreau sa Cumpar
                       </button>
+                      <div className="footer-bottom-burger">
+                        <a href="https://www.facebook.com/Imocentral">
+                          <img src={FooterSocial4} alt="footer" />
+                        </a>
+                        <img src={FooterSocial2} alt="footerlogo" />
+                        <img src={FooterSocial3} alt="footerlogo" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -386,8 +394,11 @@ function App() {
                           >
                             <option>Selecteaza tipul proprietatii</option>
                             <option value="Appartment">Appartment</option>
-                            <option value="House">House</option>
-                            <option value="Vila">Vila</option>
+                            <option value="Casa">Casa</option>
+                            <option value="Birou">Birou</option>
+                            <option value="Casa">Teren</option>
+                            <option value="Birou">Spatiu Comercial</option>
+                            <option value="Birou">Spatiu Industrial</option>
                           </select>
                         </div>
                         {errors.propertyType && (
@@ -487,13 +498,21 @@ function App() {
                     <legend>Trimite solicitarea prin:</legend>
                     <ul>
                       <li>
-                        <img src={WhatsAppIcon} onClick={sendWhatsApp} alt="WhatsAppIcon" />
+                        <img
+                          src={WhatsAppIcon}
+                          onClick={sendWhatsApp}
+                          alt="WhatsAppIcon"
+                        />
                       </li>
                       {/* <li>
                         <img src={TelegramIcon} onClick={sendTelegram} alt="" />
                       </li> */}
                       <li>
-                        <img src={GmailIcon} onClick={handleSubmit} alt="GmailIcon" />
+                        <img
+                          src={GmailIcon}
+                          onClick={handleSubmit}
+                          alt="GmailIcon"
+                        />
                       </li>
                     </ul>
                   </div>
@@ -729,6 +748,7 @@ function App() {
                               className="w-100"
                             />
                           </figure>
+
                           <h4>Apartament</h4>
                           <div className="btn-group-service">
                             <a
@@ -824,6 +844,60 @@ function App() {
                           </div>
                         </div>
                       </div>
+                      <div className="card">
+                        <div className="card-body">
+                          <figure>
+                            <img
+                              src={ImageData6}
+                              alt="serviceimage"
+                              className="w-100"
+                            />
+                          </figure>
+                          <h4>Birou</h4>
+                          <div className="btn-group-service">
+                            <a
+                              className="btn btn-primary"
+                              href="https://imocentral.ro/cauta/vanzari/Spatii-comerciale"
+                            >
+                              Vanzare
+                            </a>
+                            <a
+                              className="btn btn-secondary"
+                              href="https://imocentral.ro/cauta/inchirieri/Spatii-comerciale"
+                            >
+                              Inchiriere
+                            </a>
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <div className="card">
+                        <div className="card-body">
+                          <figure>
+                            <img
+                              src={ImageData7}
+                              alt="serviceimage"
+                              className="w-100"
+                            />
+                          </figure>
+                          <h4>Spatiu Industrial</h4>
+                          <div className="btn-group-service">
+                            <a
+                              className="btn btn-primary"
+                              href="https://imocentral.ro/cauta/vanzari/Spatii-comerciale"
+                            >
+                              Vanzare
+                            </a>
+                            <a
+                              className="btn btn-secondary"
+                              href="https://imocentral.ro/cauta/inchirieri/Spatii-comerciale"
+                            >
+                              Inchiriere
+                            </a>
+                          </div>
+                        </div>
+                        
+                      </div>
                     </Slider>
                     {/* </Carousel> */}
                   </div>
@@ -915,8 +989,11 @@ function App() {
                         >
                           <option>Selecteaza tipul proprietatii</option>
                           <option value="Appartment">Appartment</option>
-                            <option value="House">House</option>
-                            <option value="Vila">Vila</option>
+                          <option value="Casa">Casa</option>
+                          <option value="Birou">Birou</option>
+                          <option value="Casa">Teren</option>
+                          <option value="Birou">Spatiu Comercial</option>
+                          <option value="Birou">Spatiu Industrial</option>
                         </select>
                       </div>
                       {errors.propertyType && (

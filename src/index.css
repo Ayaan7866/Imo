@@ -1073,6 +1073,18 @@ footer .footer-bottom .footer-bottom-left {
     .custom-tbss {
         width: 100%;
     }
+    .footer-bottom-social2 {
+        display: none;
+    }
+    header {
+        padding-top: 80px;
+    }
+    .text-ali {
+        text-align: center;
+    }
+    .HeaderBlueButton {
+        width: 100%;
+    }
 }
 
 .footer-bottom-social {
@@ -1082,7 +1094,13 @@ footer .footer-bottom .footer-bottom-left {
     gap: 10px;
     margin: 40px 0px;
 }
-
+.footer-bottom-burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0px;
+}
 @media screen and (max-width: 320px) {
     .BannerForm ul.nav-pills {
        
