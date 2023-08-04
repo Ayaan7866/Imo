@@ -377,14 +377,15 @@ form .form-check-label a {
     font-weight: 700;
     margin-top: 30px;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    gap:10px;
+    gap: 10px;
 }
 
 .custom-tbss {
-    width: 75% ;
+    width: 75%;
 }
+
 /* Property Section */
 
 /* .sell-property {
@@ -404,6 +405,7 @@ form .form-check-label a {
     background-size: auto;
     background-repeat: no-repeat;
 }
+
 .sell-property .BannerForm h3 {
     color: #16171C;
     text-align: center;
@@ -422,12 +424,13 @@ form .form-check-label a {
 /* sell property */
 
 .sell-property h3 {
-    color: #16171C;
+    color: #16171c;
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: -1.296px;
-    margin-top: 0px;
     margin-bottom: 15px;
+    margin-top: 0;
+    font-family: 'Inter';
 }
 
 /* sell property */
@@ -455,7 +458,9 @@ form .form-check-label a {
 }
 
 .trustSection span {
-    color: #2173FF;
+    color: #2173ff;
+    font-weight: 800;
+    font-family: 'Inter';
 }
 
 .trustSection .text-center {
@@ -637,7 +642,7 @@ form .form-check-label a {
 
 .evalutationBtn {
     border-radius: 4.57px;
-    background: #4285F4;
+    background: #4f6cf6;
     border: 0px;
     color: #FFF !important;
     text-align: center;
@@ -737,6 +742,8 @@ form .form-check-label a {
 
 .contactNow span {
     color: #2173FF;
+    font-weight: 800;
+    font-family: 'Inter';
 }
 
 .contactNow p {
@@ -757,7 +764,6 @@ form .form-check-label a {
     color: #4285F4 !important;
 }
 
-.contactNow form {}
 
 .contactNow form input {
     border-radius: 4.57px;
@@ -772,7 +778,7 @@ form .form-check-label a {
 
 .contactNow form button {
     border-radius: 4.57px;
-    background: #4285F4;
+    background: #4f6cf6;
     height: 40px;
     color: #FFF;
     text-align: center;
@@ -791,7 +797,7 @@ footer {
     background: #2173FF;
     text-align: center;
     padding: 131px 0 10px 0;
-    margin-top: 120px;
+    margin-top: 4px;
 }
 
 footer ul {
@@ -809,6 +815,7 @@ footer ul li {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 footer ul li:last-child {
@@ -832,14 +839,14 @@ footer .footer-bottom .footer-bottom-left {
     justify-content: flex-end;
     align-items: center;
     gap: 15px;
-    padding: 39px 0px;
+    padding: 20px 0px;
 }
 
 @media screen and (max-width: 991px) {
     .desktopMenu {
         display: none;
     }
-  
+
     .mobileMenu {
         display: block;
     }
@@ -966,6 +973,7 @@ footer .footer-bottom .footer-bottom-left {
         padding: 0 10px;
         margin-top: 0px;
         margin-bottom: 0px;
+        font-family: 'Inter';
     }
 
     .services .services-right-side p {
@@ -1038,7 +1046,7 @@ footer .footer-bottom .footer-bottom-left {
     }
 
     .pricingBox .blueBoxPrice p {
-        margin:20px 0;
+        margin: 20px 0;
         font-size: 9.941px;
     }
 
@@ -1067,23 +1075,60 @@ footer .footer-bottom .footer-bottom-left {
     .MainSlider .MainSliderBottomSectionRight .BannerForm {
         width: 100% !important;
     }
+
     .footer-bottom-social2 {
-      padding-bottom: 20px;
+        padding-bottom: 20px;
     }
+
     .custom-tbss {
         width: 100%;
     }
+
     .footer-bottom-social2 {
         display: none;
     }
+
     header {
-        padding-top: 80px;
+        padding-top: 22px;
     }
+
     .text-ali {
         text-align: center;
     }
+
     .HeaderBlueButton {
         width: 100%;
+    }
+
+    .MainSlider {
+        background-position: bottom;
+        background-position-x: -543px;
+    }
+
+    .form-check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pricingBox .blueBoxPrice {
+
+        min-height: auto;
+
+    }
+
+    .pricingBox {
+        margin-bottom: 30px;
+    }
+
+    .evalutationBtn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .Evalutation .container {
+      
+        margin-bottom: 32px;
     }
 }
 
@@ -1094,6 +1139,7 @@ footer .footer-bottom .footer-bottom-left {
     gap: 10px;
     margin: 40px 0px;
 }
+
 .footer-bottom-burger {
     display: flex;
     justify-content: center;
@@ -1101,13 +1147,15 @@ footer .footer-bottom .footer-bottom-left {
     gap: 15px;
     margin: 15px 0px;
 }
+
 @media screen and (max-width: 320px) {
     .BannerForm ul.nav-pills {
-       
+
         padding: 8px 6px;
     }
+
     .custom-tbss {
         width: 100%;
     }
-   
+
 }

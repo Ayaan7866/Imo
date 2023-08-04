@@ -396,9 +396,9 @@ function App() {
                             <option value="Appartment">Appartment</option>
                             <option value="Casa">Casa</option>
                             <option value="Birou">Birou</option>
-                            <option value="Casa">Teren</option>
-                            <option value="Birou">Spatiu Comercial</option>
-                            <option value="Birou">Spatiu Industrial</option>
+                            <option value="Teren">Teren</option>
+                            <option value="Spatiu Comercial">Spatiu Comercial</option>
+                            <option value="Spatiu Industrial">Spatiu Industrial</option>
                           </select>
                         </div>
                         {errors.propertyType && (
@@ -987,13 +987,13 @@ function App() {
                           value={propertyType}
                           onChange={(e) => setPropertyType(e.target.value)}
                         >
-                          <option>Selecteaza tipul proprietatii</option>
-                          <option value="Appartment">Appartment</option>
+                          <option value="Select"></option>
+                          <option value="Appartment">Apartment</option>
                           <option value="Casa">Casa</option>
                           <option value="Birou">Birou</option>
-                          <option value="Casa">Teren</option>
-                          <option value="Birou">Spatiu Comercial</option>
-                          <option value="Birou">Spatiu Industrial</option>
+                          <option value="Teren">Teren</option>
+                          <option value="Spatiu Comercial">Spatiu Comercial</option>
+                          <option value="Spatiu Industrial">Spatiu Industrial</option>
                         </select>
                       </div>
                       {errors.propertyType && (
