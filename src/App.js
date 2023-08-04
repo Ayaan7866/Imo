@@ -393,7 +393,7 @@ function App() {
                             onChange={(e) => setPropertyType(e.target.value)}
                           >
                             <option>Selecteaza tipul proprietatii</option>
-                            <option value="Appartment">Appartment</option>
+                            <option value="Appartment">Apartament</option>
                             <option value="Casa">Casa</option>
                             <option value="Birou">Birou</option>
                             <option value="Teren">Teren</option>
@@ -987,8 +987,8 @@ function App() {
                           value={propertyType}
                           onChange={(e) => setPropertyType(e.target.value)}
                         >
-                          <option value="Select"></option>
-                          <option value="Appartment">Apartment</option>
+                         <option>Selecteaza tipul proprietatii</option>
+                          <option value="Appartment">Apartament</option>
                           <option value="Casa">Casa</option>
                           <option value="Birou">Birou</option>
                           <option value="Teren">Teren</option>

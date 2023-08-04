@@ -796,7 +796,7 @@ form .form-check-label a {
 footer {
     background: #2173FF;
     text-align: center;
-    padding: 131px 0 10px 0;
+    padding:57px 0 10px 0;
     margin-top: 4px;
 }
 
@@ -809,7 +809,7 @@ footer ul {
 }
 
 footer ul li {
-    margin-right: 10px;
+    gap: 31px;
     color: #FFF;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
@@ -1106,7 +1106,7 @@ footer .footer-bottom .footer-bottom-left {
     }
 
     .form-check {
-        display: flex;
+        display: flex !important;
         justify-content: center;
         align-items: center;
     }
@@ -1122,13 +1122,19 @@ footer .footer-bottom .footer-bottom-left {
     }
 
     .evalutationBtn {
-        width: 100%;
+        width: 80%;
+        margin: auto;
         display: flex;
         justify-content: center;
     }
     .Evalutation .container {
       
         margin-bottom: 32px;
+    }
+    .contactNow form input {
+        
+        width: 80%;
+        margin-bottom: 16px;
     }
 }
 
