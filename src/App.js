@@ -1415,11 +1415,15 @@ function App() {
               </li>
             </ul>
             <div className="footer-bottom-social">
-              <a href="https://www.facebook.com/Imocentral">
+            <a href="https://www.facebook.com/Imocentral">
                 <img src={FooterSocial} alt="footer" />
               </a>
+              <a href="https://instagram.com/imocentral.ro?igshid=MzRlODBiNWFlZA==">
               <img src={FooterSocial2} alt="footerlogo" />
+              </a>
+              <a href="https://youtube.com/@Imocentral">
               <img src={FooterSocial3} alt="footerlogo" />
+              </a>
             </div>
           </div>
           <div className="footer-bottom">
