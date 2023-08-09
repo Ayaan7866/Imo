@@ -75,9 +75,12 @@ function App() {
     arrows: false,
   };
   const [propertyType, setPropertyType] = useState("");
+  const [propertyType2, setPropertyType2] = useState("");
+  const [phone, setPhone] = useState("");
+  const [phone2, setPhone2] = useState("");
+  const [phone3, setPhone3] = useState("");
   const [location, setLocation] = useState("");
   const [aproxPrice, setaproxPrice] = useState("");
-  const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState({});
   const [, setSuccessMessage] = useState("");
 
@@ -90,6 +93,25 @@ function App() {
         `Locatie: ${location}\n` +
         `Pret Orientativ: ${aproxPrice}\n` +
         `Nr. de Telefon: ${phone}`;
+
+      // Replace `YOUR_PHONE_NUMBER` with your  phone number
+      const phoneNumber = "whatsapp:+40371232787";
+
+      const encodedMessage = encodeURIComponent(message);
+      const encodedPhoneNumber = encodeURIComponent(phoneNumber);
+
+      const whatsappURL = `https://api.whatsapp.com/send?phone=${encodedPhoneNumber}&text=${encodedMessage}`;
+
+      window.open(whatsappURL, "_blank");
+    }
+  };
+
+  const sendWhatsApp2 = (e) => {
+    if (validateForm2()) {
+      e.preventDefault();
+      const message =
+          `Tip proprietate: ${propertyType2}\n` +
+          `Nr. de Telefon: ${phone2}`;
 
       // Replace `YOUR_PHONE_NUMBER` with your  phone number
       const phoneNumber = "whatsapp:+40371232787";
@@ -156,6 +178,38 @@ function App() {
 
     return isValid;
   };
+
+  const validateForm2 = () => {
+    let isValid = true;
+    let errors = {};
+
+    if (!propertyType2) {
+      isValid = false;
+      errors.propertyType2 = "Property Type is required";
+    }
+
+    if (!phone2) {
+      isValid = false;
+      errors.phone2 = "Phone is required";
+    }
+
+    setErrors(errors);
+
+    return isValid;
+  };
+  const validateForm3 = () => {
+    let isValid = true;
+    let errors = {};
+
+    if (!phone) {
+      isValid = false;
+      errors.phone3 = "Phone is required";
+    }
+
+    setErrors(errors);
+
+    return isValid;
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -190,10 +244,10 @@ function App() {
   const handleSubmit2 = async (e) => {
     e.preventDefault();
 
-    if (validateForm()) {
+    if (validateForm2()) {
       const res = await axios.post(`http://formApi.test/api/quote`, {
-        property_type: propertyType,
-        phone: phone,
+        property_type: propertyType2,
+        phone: phone2,
       });
 
       if (res.data.status === "200") {
@@ -204,8 +258,8 @@ function App() {
           showConfirmButton: false,
           timer: 1500,
         });
-        setPhone("");
-        setPropertyType("");
+        setPhone2("");
+        setPropertyType2("");
         setErrors({});
       } else {
         setSuccessMessage("");
@@ -214,6 +268,33 @@ function App() {
       setSuccessMessage("");
     }
   };
+
+  const handleSubmit3 = async (e) => {
+    e.preventDefault();
+
+    if (validateForm3()) {
+      const res = await axios.post(`http://formApi.test/api/quote`, {
+        phone: phone3,
+      });
+
+      if (res.data.status === "200") {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: res.data.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        setPhone3("");
+        setErrors({});
+      } else {
+        setSuccessMessage("");
+      }
+    } else {
+      setSuccessMessage("");
+    }
+  };
+
 
   return (
     <>
@@ -984,8 +1065,8 @@ function App() {
                           id="disabledSelect"
                           className="form-select"
                           name="property_type"
-                          value={propertyType}
-                          onChange={(e) => setPropertyType(e.target.value)}
+                          value={propertyType2}
+                          onChange={(e) => setPropertyType2(e.target.value)}
                         >
                          <option>Selecteaza tipul proprietatii</option>
                           <option value="Appartment">Apartament</option>
@@ -996,12 +1077,12 @@ function App() {
                           <option value="Spatiu Industrial">Spatiu Industrial</option>
                         </select>
                       </div>
-                      {errors.propertyType && (
+                      {errors.propertyType2 && (
                         <span
                           className="text-danger"
                           style={{ fontSize: "12px" }}
                         >
-                          {errors.propertyType}
+                          {errors.propertyType2}
                         </span>
                       )}
                     </div>
@@ -1018,15 +1099,15 @@ function App() {
                         className="form-control"
                         placeholder="0740 000 000"
                         name="phone"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
+                        value={phone2}
+                        onChange={(e) => setPhone2(e.target.value)}
                       />
-                      {errors.phone && (
+                      {errors.phone2 && (
                         <span
                           className="text-danger"
                           style={{ fontSize: "12px" }}
                         >
-                          {errors.phone}
+                          {errors.phone2}
                         </span>
                       )}
                     </div>
@@ -1051,7 +1132,7 @@ function App() {
                   <legend>Trimite solicitarea prin:</legend>
                   <ul>
                     <li>
-                      <img src={WhatsAppIcon} onClick={sendWhatsApp} alt="" />
+                      <img src={WhatsAppIcon} onClick={sendWhatsApp2} alt="" />
                     </li>
                     {/* <li>
                       <img src={TelegramIcon} onClick={sendTelegram} alt="" />
@@ -1166,6 +1247,7 @@ function App() {
                           <span className="card-text">700</span>
                           <img
                             src={PieChartBarYellow}
+
                             alt="chart bar"
                             className="mb-2"
                           />
@@ -1284,9 +1366,24 @@ function App() {
               posibil.
             </p>
             <form className="mb-4">
-              <input type="text" placeholder="0740 000 000" />
-              <button>Doresc sa fiu Contactat</button>
+              <input type="text"
+                     placeholder="0740 000 000"
+                     name="phone"
+                     value={phone3}
+                     onChange={(e) => setPhone3(e.target.value)}
+              />
+
+              <button type="button" onClick={handleSubmit3}>Doresc sa fiu Contactat</button>
+
             </form>
+            {errors.phone3 && (
+                <span
+                    className="text-danger"
+                    style={{ fontSize: "12px" }}
+                >
+                            {errors.phone3}
+                          </span>
+            )}
             <div className="terms-text">
               <p>
                 *Prin apasarea butonului ”Doresc sa fiu Contactat” sunteti de
